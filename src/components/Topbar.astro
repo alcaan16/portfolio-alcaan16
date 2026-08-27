@@ -110,6 +110,21 @@ const enlaces = [
       width: 20px;
       height: 2px;
       background: var(--ink);
+      transition:
+        transform 0.18s ease,
+        opacity 0.18s ease;
+    }
+
+    .nav-toggle:checked ~ .topbar__burger span:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .nav-toggle:checked ~ .topbar__burger span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-toggle:checked ~ .topbar__burger span:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
     }
 
     .nav-toggle {
