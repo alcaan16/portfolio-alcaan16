@@ -8,6 +8,31 @@ interface Props {
 
 const { title, description } = Astro.props;
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : Astro.url.pathname;
+const ogImage = Astro.site ? new URL('/og.png', Astro.site).href : '/og.png';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Ángel Alférez Castro',
+  alternateName: 'alcaan16',
+  jobTitle: 'SAP ABAP Developer',
+  email: 'mailto:angelalferezcastro@gmail.com',
+  url: 'https://alcaan16.es',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'La Carlota',
+    addressRegion: 'Córdoba',
+    addressCountry: 'ES',
+  },
+  sameAs: ['https://github.com/alcaan16', 'https://www.linkedin.com/in/alcaan-dev'],
+  knowsAbout: [
+    'ABAP Cloud',
+    'RAP',
+    'SAP BTP',
+    'SAP Cloud Application Programming Model',
+    'SAP Integration Suite',
+  ],
+};
 ---
 
 <!doctype html>
@@ -25,14 +50,24 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : As
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:locale" content="es_ES" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Portfolio de Ángel Alférez Castro — SAP ABAP Developer, con el ticket de báscula de la validación de peso medio por pieza"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
     <slot />
   </body>
 </html>

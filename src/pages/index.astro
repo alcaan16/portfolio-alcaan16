@@ -10,14 +10,14 @@ import Topbar from '../components/Topbar.astro';
 import Trayectoria from '../components/Trayectoria.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = 'Ángel Alférez Castro — SAP ABAP Developer · ABAP Cloud, BTP, Integration Suite';
+const title = 'Ángel Alférez Castro — SAP ABAP Developer';
 const description =
-  'Desarrollador SAP ABAP Cloud con ocho años de logística en industria cárnica: recepción, lote, trazabilidad. Tres proyectos publicados (RAP, CAP, Integration Suite) y 3× SAP Certified 2026.';
+  'Desarrollador SAP ABAP Cloud con ocho años de logística en industria cárnica. Tres proyectos publicados —RAP, CAP, Integration Suite— y 3× SAP Certified 2026.';
 ---
 
 <BaseLayout title={title} description={description}>
   <Topbar />
-  <main>
+  <main id="main">
     <Hero />
     <ProyectoP1 />
     <ProyectoP2 />
