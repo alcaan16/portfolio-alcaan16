@@ -39,8 +39,8 @@ const enlaces = [
     position: sticky;
     top: 0;
     z-index: 50;
-    background: rgba(233, 238, 240, 0.94);
-    backdrop-filter: blur(6px);
+    background: rgba(11, 18, 21, 0.88);
+    backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--rule);
   }
 
@@ -63,8 +63,10 @@ const enlaces = [
 
   .topbar__name {
     font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 1.02rem;
+    font-weight: 700;
+    font-size: 0.98rem;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
     white-space: nowrap;
   }
 
@@ -86,10 +88,11 @@ const enlaces = [
     text-transform: uppercase;
     text-decoration: none;
     color: var(--ink-soft);
+    transition: color 0.18s ease;
   }
 
   .topbar__nav a:hover {
-    color: var(--accent-deep);
+    color: var(--alert);
   }
 
   .nav-toggle,
