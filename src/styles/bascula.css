@@ -13,9 +13,10 @@
   display: flex;
   justify-content: space-between;
   gap: 0.75rem;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
   padding-bottom: 0.6rem;
   border-bottom: 1px dashed var(--rule);
 }

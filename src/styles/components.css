@@ -241,7 +241,7 @@
 .limites__nota {
   margin-top: 1rem;
   font-size: 0.85rem;
-  color: var(--muted);
+  color: var(--rule);
 }
 
 /* Tarjetas */
