@@ -41,11 +41,13 @@
   color: var(--paper);
 }
 
-/* Primario sobre banda oscura — papel sólido, texto oscuro (v2 §4) */
+/* Primario sobre banda oscura — papel sólido y opaco, texto oscuro (v2 §4) */
 .btn--paper {
   background: var(--paper);
   border: 1px solid var(--paper);
   color: var(--ink);
+  font-weight: 600;
+  opacity: 1;
 }
 
 .btn--paper:hover {
