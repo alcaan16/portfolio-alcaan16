@@ -39,8 +39,8 @@ const enlaces = [
     position: sticky;
     top: 0;
     z-index: 50;
-    background: rgba(11, 18, 21, 0.88);
-    backdrop-filter: blur(8px);
+    background: rgba(233, 238, 240, 0.94);
+    backdrop-filter: blur(6px);
     border-bottom: 1px solid var(--rule);
   }
 
@@ -63,10 +63,8 @@ const enlaces = [
 
   .topbar__name {
     font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 0.98rem;
-    letter-spacing: 0.01em;
-    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.02rem;
     white-space: nowrap;
   }
 
@@ -88,11 +86,11 @@ const enlaces = [
     text-transform: uppercase;
     text-decoration: none;
     color: var(--ink-soft);
-    transition: color 0.18s ease;
+    transition: color 0.15s ease;
   }
 
   .topbar__nav a:hover {
-    color: var(--alert);
+    color: var(--accent-deep);
   }
 
   .nav-toggle,
@@ -114,8 +112,8 @@ const enlaces = [
       height: 2px;
       background: var(--ink);
       transition:
-        transform 0.18s ease,
-        opacity 0.18s ease;
+        transform 0.15s ease,
+        opacity 0.15s ease;
     }
 
     .nav-toggle:checked ~ .topbar__burger span:nth-child(1) {

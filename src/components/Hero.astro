@@ -2,42 +2,53 @@
 import BasculaTicket from './BasculaTicket.astro';
 ---
 
-<section id="hero" class="section section--paper">
-  <div class="container hero__grid">
-    <div class="hero__texto">
-      <p class="eyebrow">SAP ABAP Developer · Consultor técnico SAP</p>
-      <h1>Los mejores developers SAP son traductores entre negocio y tecnología</h1>
-      <p class="hero__sub">
-        No llegué a ABAP desde otro lenguaje: llegué desde ocho años de planta en industria cárnica
-        — recepción, gestión de lote, doble unidad de medida, rotación por fecha (criterio FEFO),
-        trazabilidad de extremo a extremo. Ese conocimiento funcional está convertido aquí en código
-        limpio y testeable: tres proyectos publicados sobre el mismo hilo, recepción → lote → FEFO →
-        alerta de caducidad.
-      </p>
-      <p class="hero__frase">
-        «Cuando un requerimiento habla de entradas de mercancía, de trazabilidad de lote o de
-        diferencias de inventario, no necesito que me lo traduzcan.»
-      </p>
-      <div class="hero__ctas">
-        <a class="btn btn--solid" href="#p1">Ver proyectos</a>
-        <a class="btn btn--ghost" href="#contacto">Contacto</a>
+<section id="hero" class="section section--dark">
+  <div class="container">
+    <div class="hero__marco">
+      <div class="hero__grid">
+        <div class="hero__texto">
+          <p class="eyebrow">SAP ABAP Developer · Consultor técnico SAP</p>
+          <h1>Los mejores developers SAP son traductores entre negocio y tecnología</h1>
+          <p class="hero__sub">
+            No llegué a ABAP desde otro lenguaje: llegué desde ocho años de planta en industria
+            cárnica — recepción, gestión de lote, doble unidad de medida, rotación por fecha
+            (criterio FEFO), trazabilidad de extremo a extremo. Ese conocimiento funcional está
+            convertido aquí en código limpio y testeable: tres proyectos publicados sobre el mismo
+            hilo, recepción → lote → FEFO → alerta de caducidad.
+          </p>
+          <p class="hero__frase">
+            «Cuando un requerimiento habla de entradas de mercancía, de trazabilidad de lote o de
+            diferencias de inventario, no necesito que me lo traduzcan.»
+          </p>
+          <div class="hero__ctas">
+            <a class="btn btn--paper" href="#p1">Ver proyectos</a>
+            <a class="btn btn--ghost" href="#contacto">Contacto</a>
+          </div>
+          <ul class="hero__meta">
+            <li>3× SAP Certified 2026</li>
+            <li>ABAP Cloud · BTP · Integration Suite · CAP</li>
+            <li>La Carlota, Córdoba — remoto o Córdoba/Sevilla</li>
+          </ul>
+        </div>
+        <div class="hero__ticket">
+          <BasculaTicket />
+          <p class="hero__ticket-pie">
+            La validación que sale de haber estado delante de la báscula — implementada en P1.
+          </p>
+        </div>
       </div>
-      <ul class="hero__meta">
-        <li>3× SAP Certified 2026</li>
-        <li>ABAP Cloud · BTP · Integration Suite · CAP</li>
-        <li>La Carlota, Córdoba — remoto o Córdoba/Sevilla</li>
-      </ul>
-    </div>
-    <div class="hero__ticket">
-      <BasculaTicket />
-      <p class="hero__ticket-pie">
-        La validación que sale de haber estado delante de la báscula — implementada en P1.
-      </p>
     </div>
   </div>
 </section>
 
 <style>
+  /* Líneas de encuadre — v2 §6: solo en el hero, fuera en móvil */
+  .hero__marco {
+    border-left: 1px solid rgba(95, 176, 192, 0.22);
+    border-right: 1px solid rgba(95, 176, 192, 0.22);
+    padding-inline: clamp(1.5rem, 4vw, 3rem);
+  }
+
   .hero__grid {
     display: grid;
     grid-template-columns: 1.25fr 0.75fr;
@@ -47,21 +58,23 @@ import BasculaTicket from './BasculaTicket.astro';
 
   h1 {
     margin-top: 0.9rem;
+    color: var(--paper);
   }
 
   .hero__sub {
     margin-top: 1.4rem;
     font-size: 1.06rem;
     max-width: 58ch;
+    color: #b6c6ce;
   }
 
   .hero__frase {
     margin-top: 1.5rem;
     padding-left: 1rem;
-    border-left: 3px solid var(--alert);
+    border-left: 3px solid var(--accent-on-dark);
     font-size: 1.05rem;
     font-weight: 500;
-    color: var(--ink);
+    color: var(--paper);
     max-width: 52ch;
   }
 
@@ -81,75 +94,29 @@ import BasculaTicket from './BasculaTicket.astro';
     margin-top: 1.6rem;
     font-family: var(--font-mono);
     font-size: 0.76rem;
-    color: var(--muted);
+    color: #8ba0aa;
   }
 
   .hero__ticket {
     justify-self: center;
-    position: relative;
-  }
-
-  .hero__ticket::before {
-    content: '';
-    position: absolute;
-    inset: -18%;
-    background: radial-gradient(closest-side, rgba(255, 180, 84, 0.12), transparent 72%);
-    pointer-events: none;
   }
 
   .hero__ticket-pie {
     margin-top: 0.9rem;
     font-family: var(--font-mono);
     font-size: 0.73rem;
-    color: var(--muted);
+    color: #8ba0aa;
     max-width: 340px;
     line-height: 1.5;
   }
 
-  /* Entrada escalonada del texto al cargar — acompaña la impresión del ticket */
-  @media (prefers-reduced-motion: no-preference) {
-    .hero__texto > * {
-      animation: hero-subir 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) both;
-    }
-
-    .hero__texto > *:nth-child(1) {
-      animation-delay: 0ms;
-    }
-
-    .hero__texto > *:nth-child(2) {
-      animation-delay: 90ms;
-    }
-
-    .hero__texto > *:nth-child(3) {
-      animation-delay: 180ms;
-    }
-
-    .hero__texto > *:nth-child(4) {
-      animation-delay: 270ms;
-    }
-
-    .hero__texto > *:nth-child(5) {
-      animation-delay: 360ms;
-    }
-
-    .hero__texto > *:nth-child(6) {
-      animation-delay: 450ms;
-    }
-  }
-
-  @keyframes hero-subir {
-    from {
-      opacity: 0;
-      transform: translateY(22px);
-    }
-
-    to {
-      opacity: 1;
-      transform: none;
-    }
-  }
-
   @media (max-width: 860px) {
+    .hero__marco {
+      border-left: none;
+      border-right: none;
+      padding-inline: 0;
+    }
+
     .hero__grid {
       grid-template-columns: 1fr;
       gap: 2.5rem;

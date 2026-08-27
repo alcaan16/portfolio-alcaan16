@@ -2,7 +2,7 @@
 const anioActual = new Date().getFullYear();
 ---
 
-<section id="contacto" class="section section--dark">
+<section id="contacto" class="section section--paper-deep">
   <div class="container">
     <p class="eyebrow">Contacto</p>
     <h2>Hablemos de entradas de mercancía</h2>
@@ -12,8 +12,8 @@ const anioActual = new Date().getFullYear();
     </p>
     <a class="email" href="mailto:angelalferezcastro@gmail.com">angelalferezcastro@gmail.com</a>
     <div class="redes">
-      <a class="btn btn--light" href="https://github.com/alcaan16">GitHub · alcaan16</a>
-      <a class="btn btn--light" href="https://www.linkedin.com/in/alcaan-dev">LinkedIn · alcaan-dev</a>
+      <a class="btn btn--ghost" href="https://github.com/alcaan16">GitHub · alcaan16</a>
+      <a class="btn btn--ghost" href="https://www.linkedin.com/in/alcaan-dev">LinkedIn · alcaan-dev</a>
     </div>
     <footer class="pie">
       <span>© {anioActual} Ángel Alférez Castro · alcaan16.es</span>
@@ -39,15 +39,14 @@ const anioActual = new Date().getFullYear();
     font-family: var(--font-mono);
     font-size: clamp(1.05rem, 2.6vw, 1.5rem);
     font-weight: 600;
-    color: var(--alert);
-    text-shadow: var(--led-glow);
+    color: var(--accent-deep);
     text-decoration-thickness: 1px;
     text-underline-offset: 5px;
     overflow-wrap: anywhere;
   }
 
   .email:hover {
-    color: #ffc678;
+    color: var(--accent);
   }
 
   .redes {
