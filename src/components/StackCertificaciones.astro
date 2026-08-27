@@ -1,0 +1,108 @@
+---
+import { certificaciones, certificacionesNota } from '../data/certificaciones';
+import { stackNoSap, stackNota, stackSap } from '../data/stack';
+---
+
+<section id="stack" class="section section--paper">
+  <div class="container">
+    <header class="section-head">
+      <p class="eyebrow">Stack y certificaciones</p>
+      <h2>Stack técnico y certificaciones</h2>
+    </header>
+
+    <div class="stack-grid">
+      <div>
+        <p class="block-title">SAP — con proyecto detrás</p>
+        <ul class="chip-row">
+          {stackSap.map((tecnologia) => <li class="chip chip--activo">{tecnologia}</li>)}
+        </ul>
+      </div>
+      <div>
+        <p class="block-title">Fuera de SAP — desarrollo propio</p>
+        <ul class="chip-row">
+          {stackNoSap.map((tecnologia) => <li class="chip">{tecnologia}</li>)}
+        </ul>
+      </div>
+    </div>
+
+    <p class="stack-nota">{stackNota}</p>
+
+    <div class="certs-grid">
+      {
+        certificaciones.map((certificacion) => (
+          <article class="card card--sm-radius cert">
+            <p class="cert__codigo">{certificacion.codigo}</p>
+            <h3 class="cert__nombre">{certificacion.nombre}</h3>
+            <div class="cert__meta">
+              <span>{certificacion.anio}</span>
+              <a href={certificacion.proyecto.ancla}>{certificacion.proyecto.etiqueta}</a>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <p class="certs-nota">{certificacionesNota}</p>
+  </div>
+</section>
+
+<style>
+  .stack-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2.2rem;
+  }
+
+  .stack-nota {
+    margin-top: 1.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--muted);
+    max-width: 75ch;
+  }
+
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2.6rem;
+  }
+
+  .cert__codigo {
+    font-family: var(--font-mono);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--accent-deep);
+  }
+
+  .cert__nombre {
+    margin-top: 0.5rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  .cert__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem 1rem;
+    margin-top: 0.9rem;
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    color: var(--muted);
+  }
+
+  .certs-nota {
+    margin-top: 1.4rem;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    max-width: 75ch;
+  }
+
+  @media (max-width: 820px) {
+    .stack-grid,
+    .certs-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

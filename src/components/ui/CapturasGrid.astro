@@ -1,0 +1,14 @@
+---
+import type { Captura as CapturaData } from '../../data/proyectos';
+import Captura from './Captura.astro';
+
+interface Props {
+  capturas: CapturaData[];
+}
+
+const { capturas } = Astro.props;
+---
+
+<div class="capturas-grid">
+  {capturas.map((captura) => <Captura captura={captura} />)}
+</div>

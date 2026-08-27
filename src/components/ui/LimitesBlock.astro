@@ -1,0 +1,24 @@
+---
+interface Props {
+  titulo?: string;
+  items?: string[];
+  nota?: string;
+}
+
+const { titulo = 'Lo que no está implementado — a propósito', items = [], nota } = Astro.props;
+---
+
+<aside class="limites">
+  <p class="limites__eyebrow">{titulo}</p>
+  {
+    items.length > 0 && (
+      <ul>
+        {items.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    )
+  }
+  <slot />
+  {nota && <p class="limites__nota">{nota}</p>}
+</aside>

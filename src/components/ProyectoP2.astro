@@ -1,0 +1,104 @@
+---
+import { p2 } from '../data/proyectos';
+import LimitesBlock from './ui/LimitesBlock.astro';
+import TablaFefo from './ui/TablaFefo.astro';
+---
+
+<section id="p2" class="section section--paper">
+  <div class="container">
+    <header class="section-head">
+      <p class="eyebrow">Proyecto 02 · {p2.stackLinea}</p>
+      <h2>{p2.nombre}</h2>
+      <p class="tagline">{p2.tagline}</p>
+      <div class="meta-line">
+        <a href={p2.repoUrl}>github.com/alcaan16/{p2.nombre}</a>
+        <span>Publicado {p2.publicado}</span>
+      </div>
+      <p class="lead">{p2.queResuelve}</p>
+    </header>
+
+    <div class="bloques-2col">
+      <div>
+        <p class="block-title">Arquitectura</p>
+        <pre class="mono-block">{p2.arquitectura}</pre>
+        <p class="nota">{p2.arquitecturaNota}</p>
+      </div>
+      <div>
+        <p class="block-title">Lo que demuestra</p>
+        <ul class="lista-guion">
+          {p2.demuestra.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </div>
+
+    <div class="bloque">
+      <p class="block-title">Consumo FEFO — verificado con curl</p>
+      <p class="fefo-intro">{p2.ejemploFefo.intro}</p>
+      <TablaFefo />
+      <p class="fefo-conclusion">{p2.ejemploFefo.conclusion}</p>
+    </div>
+
+    <div class="bloque">
+      <p class="block-title">Modelo de datos</p>
+      <figure class="captura">
+        <img src={p2.svg.src} alt={p2.svg.alt} loading="lazy" />
+        <figcaption>{p2.svg.caption}</figcaption>
+      </figure>
+    </div>
+
+    <LimitesBlock titulo="Lo que no está implementado — documentado en el README" items={p2.limites} />
+  </div>
+</section>
+
+<style>
+  .tagline {
+    margin-top: 0.3rem;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+  }
+
+  .bloque {
+    margin-top: 2.6rem;
+  }
+
+  .bloques-2col {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 2.2rem;
+  }
+
+  .nota {
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+
+  .lista-guion li {
+    font-size: 0.95rem;
+  }
+
+  .fefo-intro {
+    margin-bottom: 1rem;
+    font-size: 0.97rem;
+  }
+
+  .fefo-conclusion {
+    margin-top: 0.9rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-deep);
+  }
+
+  .captura img {
+    padding: 1.2rem;
+  }
+
+  @media (max-width: 820px) {
+    .bloques-2col {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,81 @@
+/* Contenedor y ritmo de secciones */
+.container {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  padding-block: var(--section-y);
+}
+
+.section--paper {
+  background: var(--paper);
+}
+
+.section--paper-deep {
+  background: var(--paper-deep);
+}
+
+.section--dark {
+  background: var(--ink);
+  color: var(--paper-deep);
+}
+
+.section--dark h2,
+.section--dark h3 {
+  color: var(--paper);
+}
+
+.section--dark a {
+  color: var(--paper);
+}
+
+.section--dark a:hover {
+  color: var(--alert-bg);
+}
+
+/* Cabecera de sección */
+.section-head {
+  margin-bottom: 2.5rem;
+}
+
+.section-head h2 {
+  margin-top: 0.4rem;
+}
+
+.section-head .lead {
+  margin-top: 0.9rem;
+  max-width: 62ch;
+  font-size: 1.06rem;
+}
+
+/* Línea de metadatos bajo un titular (repo, licencia, fecha) */
+.meta-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.1rem;
+  margin-top: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.meta-line a {
+  color: var(--accent-deep);
+}
+
+/* Subtítulos internos de bloque */
+.block-title {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+}
+
+.section--dark .block-title {
+  color: var(--paper);
+}

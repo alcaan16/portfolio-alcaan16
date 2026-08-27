@@ -1,0 +1,153 @@
+---
+import { p1 } from '../data/proyectos';
+import CapturasGrid from './ui/CapturasGrid.astro';
+import LimitesBlock from './ui/LimitesBlock.astro';
+import ValidacionCallout from './ui/ValidacionCallout.astro';
+---
+
+<section id="p1" class="section section--paper-deep">
+  <div class="container">
+    <header class="section-head">
+      <p class="eyebrow">Proyecto 01 · {p1.stackLinea}</p>
+      <h2>{p1.nombre}</h2>
+      <p class="tagline">{p1.tagline}</p>
+      <div class="meta-line">
+        <a href={p1.repoUrl}>github.com/alcaan16/{p1.nombre}</a>
+        <span>{p1.lenguajes}</span>
+        <span>Licencia {p1.licencia}</span>
+        <span>Publicado {p1.publicado}</span>
+      </div>
+      <p class="lead">{p1.queResuelve}</p>
+    </header>
+
+    <ul class="metricas">
+      {
+        p1.metricas.map((metrica) => (
+          <li class="metrica">
+            <span class="metrica__valor">{metrica.valor}</span>
+            <span class="metrica__label">{metrica.label}</span>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="bloque bloques-2col">
+      <div>
+        <p class="block-title">Arquitectura</p>
+        <pre class="mono-block">{p1.arquitectura}</pre>
+        <p class="nota">{p1.arquitecturaNota}</p>
+      </div>
+      <div>
+        <p class="block-title">Reglas de negocio</p>
+        <dl class="reglas">
+          <div>
+            <dt>Determinations (6)</dt>
+            <dd>{p1.determinations}</dd>
+          </div>
+          <div>
+            <dt>Validations (7)</dt>
+            <dd>{p1.validations}</dd>
+          </div>
+          <div>
+            <dt>Acciones (4)</dt>
+            <dd>{p1.acciones}</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="bloque">
+      <p class="block-title">Las dos validaciones que salen de haber estado delante de la báscula</p>
+      <div class="callouts-2col">
+        {
+          p1.validacionesDiferenciales.map((validacion) => (
+            <ValidacionCallout titulo={validacion.titulo} texto={validacion.texto} />
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="bloque bloques-2col">
+      <div>
+        <p class="block-title">Decisión de diseño — acceptDeviation</p>
+        <p class="texto">{p1.decisionDiseno}</p>
+      </div>
+      <div>
+        <p class="block-title">Calidad</p>
+        <p class="texto">{p1.calidad}</p>
+      </div>
+    </div>
+
+    <div class="bloque">
+      <p class="block-title">Capturas</p>
+      <CapturasGrid capturas={p1.capturas} />
+    </div>
+
+    <LimitesBlock titulo="Lo que no está implementado — documentado en el README" items={p1.limites} nota={p1.limitesNota} />
+  </div>
+</section>
+
+<style>
+  .tagline {
+    margin-top: 0.3rem;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+  }
+
+  .metricas {
+    margin-top: 0.5rem;
+  }
+
+  .bloque {
+    margin-top: 2.6rem;
+  }
+
+  .bloques-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.2rem;
+  }
+
+  .nota {
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+
+  .texto {
+    font-size: 0.97rem;
+  }
+
+  .reglas {
+    display: grid;
+    gap: 1rem;
+    margin: 0;
+  }
+
+  .reglas dt {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent-deep);
+  }
+
+  .reglas dd {
+    margin: 0.25rem 0 0;
+    font-size: 0.93rem;
+  }
+
+  .callouts-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 820px) {
+    .bloques-2col,
+    .callouts-2col {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
