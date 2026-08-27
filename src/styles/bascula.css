@@ -1,0 +1,118 @@
+/* Ticket de báscula — elemento firma del hero (Brief §9) */
+.ticket {
+  width: min(340px, 100%);
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--ink);
+  font-family: var(--font-mono);
+  color: var(--ink);
+  padding: 1.1rem 1.2rem 1.3rem;
+}
+
+.ticket__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px dashed var(--rule);
+}
+
+.ticket__rows {
+  list-style: none;
+  margin: 0;
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed var(--rule);
+}
+
+.ticket__rows li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  line-height: 1.9;
+}
+
+.ticket__rows .etiqueta {
+  color: var(--muted);
+}
+
+.ticket__rows .valor {
+  font-weight: 600;
+}
+
+.ticket__alerta {
+  margin-top: 0.7rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--alert);
+  background: var(--alert-bg);
+  border: 1px solid rgba(138, 83, 0, 0.28);
+  padding: 0.55rem 0.7rem;
+}
+
+.ticket__pie {
+  margin-top: 0.8rem;
+  font-size: 0.68rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+/* Impresión escalonada de filas — único elemento animado del sitio */
+@media (prefers-reduced-motion: no-preference) {
+  .ticket__header,
+  .ticket__rows li,
+  .ticket__alerta,
+  .ticket__pie {
+    animation: ticket-imprimir 260ms steps(3) both;
+  }
+
+  .ticket__header {
+    animation-delay: 100ms;
+  }
+
+  .ticket__rows li:nth-child(1) {
+    animation-delay: 320ms;
+  }
+
+  .ticket__rows li:nth-child(2) {
+    animation-delay: 480ms;
+  }
+
+  .ticket__rows li:nth-child(3) {
+    animation-delay: 640ms;
+  }
+
+  .ticket__rows li:nth-child(4) {
+    animation-delay: 800ms;
+  }
+
+  .ticket__rows li:nth-child(5) {
+    animation-delay: 960ms;
+  }
+
+  .ticket__alerta {
+    animation-delay: 1220ms;
+  }
+
+  .ticket__pie {
+    animation-delay: 1420ms;
+  }
+}
+
+@keyframes ticket-imprimir {
+  from {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+    transform: translateY(-3px);
+  }
+
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: none;
+  }
+}

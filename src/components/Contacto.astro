@@ -1,0 +1,71 @@
+---
+const anioActual = new Date().getFullYear();
+---
+
+<section id="contacto" class="section section--dark">
+  <div class="container">
+    <p class="eyebrow">Contacto</p>
+    <h2>Hablemos de entradas de mercancía</h2>
+    <p class="disponibilidad">
+      Primera posición como desarrollador SAP (ABAP Cloud / BTP) en plantilla. Remoto o presencial
+      en Córdoba/Sevilla, con movilidad propia para desplazamientos puntuales.
+    </p>
+    <a class="email" href="mailto:angelalferezcastro@gmail.com">angelalferezcastro@gmail.com</a>
+    <div class="redes">
+      <a class="btn btn--light" href="https://github.com/alcaan16">GitHub · alcaan16</a>
+      <a class="btn btn--light" href="https://www.linkedin.com/in/alcaan-dev">LinkedIn · alcaan-dev</a>
+    </div>
+    <footer class="pie">
+      <span>© {anioActual} Ángel Alférez Castro · alcaan16.es</span>
+      <span>HTML estático generado con Astro — sin JavaScript de framework en runtime.</span>
+    </footer>
+  </div>
+</section>
+
+<style>
+  h2 {
+    margin-top: 0.4rem;
+  }
+
+  .disponibilidad {
+    margin-top: 1rem;
+    max-width: 60ch;
+    font-size: 1.02rem;
+  }
+
+  .email {
+    display: inline-block;
+    margin-top: 1.8rem;
+    font-family: var(--font-mono);
+    font-size: clamp(1.05rem, 2.6vw, 1.5rem);
+    font-weight: 600;
+    color: var(--alert-bg);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 5px;
+    overflow-wrap: anywhere;
+  }
+
+  .email:hover {
+    color: var(--paper);
+  }
+
+  .redes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1.8rem;
+  }
+
+  .pie {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem 2rem;
+    margin-top: 3.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(233, 238, 240, 0.18);
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    color: var(--muted);
+  }
+</style>

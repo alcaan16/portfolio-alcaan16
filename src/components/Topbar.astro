@@ -1,0 +1,152 @@
+---
+const enlaces = [
+  { href: '#p1', texto: 'Proyectos' },
+  { href: '#stack', texto: 'Stack' },
+  { href: '#trayectoria', texto: 'Trayectoria' },
+  { href: '#otros-proyectos', texto: 'Otros' },
+  { href: '#contacto', texto: 'Contacto' },
+];
+---
+
+<header class="topbar">
+  <div class="topbar__inner container">
+    <a class="topbar__brand" href="#hero">
+      <span class="topbar__name">Ángel Alférez Castro</span>
+      <span class="topbar__handle">alcaan16</span>
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Abrir menú de navegación" />
+    <label for="nav-toggle" class="topbar__burger" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </label>
+    <nav class="topbar__nav" aria-label="Secciones">
+      {enlaces.map((enlace) => <a href={enlace.href}>{enlace.texto}</a>)}
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Mejora progresiva: cierra el menú móvil al elegir sección. Sin JS, el menú simplemente queda abierto.
+  const toggle = document.getElementById('nav-toggle') as HTMLInputElement | null;
+  document.querySelectorAll<HTMLAnchorElement>('.topbar__nav a').forEach((enlace) => {
+    enlace.addEventListener('click', () => {
+      if (toggle) toggle.checked = false;
+    });
+  });
+</script>
+
+<style>
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(233, 238, 240, 0.94);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .topbar__inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    height: var(--topbar-h);
+  }
+
+  .topbar__brand {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .topbar__name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.02rem;
+    white-space: nowrap;
+  }
+
+  .topbar__handle {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+
+  .topbar__nav {
+    display: flex;
+    gap: 1.4rem;
+  }
+
+  .topbar__nav a {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--ink-soft);
+  }
+
+  .topbar__nav a:hover {
+    color: var(--accent-deep);
+  }
+
+  .nav-toggle,
+  .topbar__burger {
+    display: none;
+  }
+
+  @media (max-width: 760px) {
+    .topbar__burger {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 0.6rem 0.4rem;
+      cursor: pointer;
+    }
+
+    .topbar__burger span {
+      width: 20px;
+      height: 2px;
+      background: var(--ink);
+    }
+
+    .nav-toggle {
+      display: block;
+      position: absolute;
+      right: var(--gutter);
+      width: 2.2rem;
+      height: 2.2rem;
+      margin: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .nav-toggle:focus-visible ~ .topbar__burger {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .topbar__nav {
+      display: none;
+      position: absolute;
+      top: var(--topbar-h);
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      gap: 0;
+      background: var(--paper);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .topbar__nav a {
+      padding: 0.9rem var(--gutter);
+      border-top: 1px solid var(--rule);
+    }
+
+    .nav-toggle:checked ~ .topbar__nav {
+      display: flex;
+    }
+  }
+</style>

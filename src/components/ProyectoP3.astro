@@ -1,0 +1,139 @@
+---
+import { p3 } from '../data/proyectos';
+import CapturasGrid from './ui/CapturasGrid.astro';
+import LimitesBlock from './ui/LimitesBlock.astro';
+---
+
+<section id="p3" class="section section--paper-deep">
+  <div class="container">
+    <header class="section-head">
+      <p class="eyebrow">Proyecto 03 · {p3.stackLinea}</p>
+      <h2>{p3.nombre}</h2>
+      <p class="tagline">{p3.tagline}</p>
+      <div class="meta-line">
+        <a href={p3.repoUrl}>github.com/alcaan16/{p3.nombre}</a>
+        <span>Publicado {p3.publicado}</span>
+      </div>
+      <p class="lead">{p3.queResuelve}</p>
+      <p class="por-que">{p3.porQueEsteCaso}</p>
+    </header>
+
+    <div class="bloques-2col">
+      <div>
+        <p class="block-title">El iFlow</p>
+        <pre class="mono-block">{p3.arquitectura}</pre>
+        <p class="block-title atajo-titulo">El atajo P1 → P3</p>
+        <p class="texto">{p3.atajo}</p>
+      </div>
+      <div>
+        <p class="block-title">Scripts Groovy</p>
+        <ul class="lista-guion scripts">
+          {p3.scripts.map((script) => <li>{script}</li>)}
+        </ul>
+        <p class="block-title demuestra-titulo">Lo que demuestra, en orden de valor</p>
+        <ol class="demuestra">
+          {p3.demuestra.map((item) => <li>{item}</li>)}
+        </ol>
+      </div>
+    </div>
+
+    <div class="bloque">
+      <p class="block-title">El fallo capturado — el activo principal</p>
+      <CapturasGrid capturas={p3.capturasDestacadas} />
+    </div>
+
+    <div class="bloque">
+      <p class="block-title">Ejecución sin errores y entrega en el receptor</p>
+      <CapturasGrid capturas={p3.capturasSecundarias} />
+    </div>
+
+    <LimitesBlock titulo="Decisiones de diseño — el límite señalado con precisión">
+      <div class="decisiones">
+        {
+          p3.decisiones.map((decision) => (
+            <div>
+              <p class="decision-titulo">{decision.titulo}</p>
+              <p class="decision-texto">{decision.texto}</p>
+            </div>
+          ))
+        }
+      </div>
+    </LimitesBlock>
+  </div>
+</section>
+
+<style>
+  .tagline {
+    margin-top: 0.3rem;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+  }
+
+  .por-que {
+    margin-top: 0.9rem;
+    max-width: 62ch;
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+
+  .bloque {
+    margin-top: 2.6rem;
+  }
+
+  .bloques-2col {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 2.2rem;
+  }
+
+  .texto {
+    font-size: 0.95rem;
+  }
+
+  .atajo-titulo,
+  .demuestra-titulo {
+    margin-top: 1.6rem;
+  }
+
+  .scripts li,
+  .demuestra li {
+    font-size: 0.93rem;
+  }
+
+  .demuestra {
+    display: grid;
+    gap: 0.6rem;
+    padding-left: 1.25rem;
+  }
+
+  .demuestra li::marker {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .decisiones {
+    display: grid;
+    gap: 1.2rem;
+  }
+
+  .decision-titulo {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--alert-bg);
+  }
+
+  .decision-texto {
+    margin-top: 0.3rem;
+    font-size: 0.92rem;
+  }
+
+  @media (max-width: 820px) {
+    .bloques-2col {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

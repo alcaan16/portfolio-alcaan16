@@ -1,0 +1,30 @@
+---
+import { p2 } from '../../data/proyectos';
+
+const { ejemploFefo } = p2;
+---
+
+<div class="tabla-scroll">
+  <table class="tabla-datos">
+    <thead>
+      <tr>
+        <th>Lote</th>
+        <th>Caducidad</th>
+        <th>Disponible antes</th>
+        <th>Disponible después</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        ejemploFefo.filas.map((fila) => (
+          <tr>
+            <td>{fila.lote}</td>
+            <td>{fila.caducidad}</td>
+            <td>{fila.antes}</td>
+            <td>{fila.despues}</td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>

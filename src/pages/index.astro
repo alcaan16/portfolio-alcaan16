@@ -1,0 +1,30 @@
+---
+import Contacto from '../components/Contacto.astro';
+import Hero from '../components/Hero.astro';
+import OtrosProyectos from '../components/OtrosProyectos.astro';
+import ProyectoP1 from '../components/ProyectoP1.astro';
+import ProyectoP2 from '../components/ProyectoP2.astro';
+import ProyectoP3 from '../components/ProyectoP3.astro';
+import StackCertificaciones from '../components/StackCertificaciones.astro';
+import Topbar from '../components/Topbar.astro';
+import Trayectoria from '../components/Trayectoria.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Ángel Alférez Castro — SAP ABAP Developer · ABAP Cloud, BTP, Integration Suite';
+const description =
+  'Desarrollador SAP ABAP Cloud con ocho años de logística en industria cárnica: recepción, lote, trazabilidad. Tres proyectos publicados (RAP, CAP, Integration Suite) y 3× SAP Certified 2026.';
+---
+
+<BaseLayout title={title} description={description}>
+  <Topbar />
+  <main>
+    <Hero />
+    <ProyectoP1 />
+    <ProyectoP2 />
+    <ProyectoP3 />
+    <StackCertificaciones />
+    <Trayectoria />
+    <OtrosProyectos />
+  </main>
+  <Contacto />
+</BaseLayout>

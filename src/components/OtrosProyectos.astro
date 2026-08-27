@@ -1,0 +1,71 @@
+---
+import { otrosProyectos } from '../data/otrosProyectos';
+---
+
+<section id="otros-proyectos" class="section section--paper">
+  <div class="container">
+    <header class="section-head">
+      <p class="eyebrow">Base técnica previa a SAP</p>
+      <h2>Otros proyectos</h2>
+      <p class="lead">
+        Responden a «¿pero sabe programar?» con código propio. La separación por capas de
+        canister-api es la misma idea de modelo + servicio que después aparece en CAP.
+      </p>
+    </header>
+
+    <div class="otros-grid">
+      {
+        otrosProyectos.map((proyecto) => (
+          <article class="card card--sm-radius otro">
+            <h3 class="otro__nombre">{proyecto.nombre}</h3>
+            <ul class="chip-row otro__stack">
+              {proyecto.stack.map((tecnologia) => (
+                <li class="chip">{tecnologia}</li>
+              ))}
+            </ul>
+            <p class="otro__descripcion">{proyecto.descripcion}</p>
+            <div class="meta-line">
+              <a href={proyecto.repoUrl}>{proyecto.repoUrl.replace('https://', '')}</a>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .otros-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .otro {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .otro__nombre {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .otro__stack .chip {
+    font-size: 0.72rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .otro__descripcion {
+    font-size: 0.93rem;
+    flex-grow: 1;
+  }
+
+  @media (max-width: 820px) {
+    .otros-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

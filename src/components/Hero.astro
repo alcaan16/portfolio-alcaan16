@@ -1,0 +1,110 @@
+---
+import BasculaTicket from './BasculaTicket.astro';
+---
+
+<section id="hero" class="section section--paper">
+  <div class="container hero__grid">
+    <div>
+      <p class="eyebrow">SAP ABAP Developer · Consultor técnico SAP</p>
+      <h1>Los mejores developers SAP son traductores entre negocio y tecnología</h1>
+      <p class="hero__sub">
+        No llegué a ABAP desde otro lenguaje: llegué desde ocho años de planta en industria cárnica
+        — recepción, gestión de lote, doble unidad de medida, rotación por fecha (criterio FEFO),
+        trazabilidad de extremo a extremo. Ese conocimiento funcional está convertido aquí en código
+        limpio y testeable: tres proyectos publicados sobre el mismo hilo, recepción → lote → FEFO →
+        alerta de caducidad.
+      </p>
+      <p class="hero__frase">
+        «Cuando un requerimiento habla de entradas de mercancía, de trazabilidad de lote o de
+        diferencias de inventario, no necesito que me lo traduzcan.»
+      </p>
+      <div class="hero__ctas">
+        <a class="btn btn--solid" href="#p1">Ver proyectos</a>
+        <a class="btn btn--ghost" href="#contacto">Contacto</a>
+      </div>
+      <ul class="hero__meta">
+        <li>3× SAP Certified 2026</li>
+        <li>ABAP Cloud · BTP · Integration Suite · CAP</li>
+        <li>La Carlota, Córdoba — remoto o Córdoba/Sevilla</li>
+      </ul>
+    </div>
+    <div class="hero__ticket">
+      <BasculaTicket />
+      <p class="hero__ticket-pie">
+        La validación que sale de haber estado delante de la báscula — implementada en P1.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero__grid {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  h1 {
+    margin-top: 0.7rem;
+  }
+
+  .hero__sub {
+    margin-top: 1.2rem;
+    font-size: 1.06rem;
+    max-width: 58ch;
+  }
+
+  .hero__frase {
+    margin-top: 1.4rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--accent);
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--ink);
+    max-width: 52ch;
+  }
+
+  .hero__ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1.8rem;
+  }
+
+  .hero__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.3rem;
+    list-style: none;
+    padding: 0;
+    margin-top: 1.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    color: var(--muted);
+  }
+
+  .hero__ticket {
+    justify-self: center;
+  }
+
+  .hero__ticket-pie {
+    margin-top: 0.9rem;
+    font-family: var(--font-mono);
+    font-size: 0.73rem;
+    color: var(--muted);
+    max-width: 340px;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 860px) {
+    .hero__grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .hero__ticket {
+      justify-self: start;
+    }
+  }
+</style>

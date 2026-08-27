@@ -1,0 +1,26 @@
+/* Sistema de diseño "muelle de descarga" — tokens (Brief §9) */
+:root {
+  /* Paleta */
+  --ink: #0f1a21; /* negro azulado casi puro — textos */
+  --ink-soft: #2a3b46; /* variante suave para párrafos */
+  --muted: #5c6e79; /* gris azulado — etiquetas, pies */
+  --paper: #e9eef0; /* fondo general — blanco frío */
+  --paper-deep: #dde5e8; /* fondo de secciones alternas */
+  --card: #ffffff; /* fondo de tarjetas */
+  --rule: #c6d1d7; /* líneas divisoras */
+  --accent: #14606f; /* teal industrial — eyebrows, chips activos */
+  --accent-deep: #0b424d; /* teal oscuro — enlaces, hover */
+  --alert: #8a5300; /* ámbar — ticket de báscula, cifras de validación */
+  --alert-bg: #fdf5e7; /* fondo ámbar suave */
+
+  /* Tipografía — IBM Plex */
+  --font-display: 'IBM Plex Sans Condensed', 'Arial Narrow', sans-serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'Courier New', monospace;
+
+  /* Medidas */
+  --container: 1100px;
+  --gutter: 1.25rem;
+  --section-y: clamp(3.5rem, 8vw, 5.5rem);
+  --topbar-h: 3.5rem;
+}

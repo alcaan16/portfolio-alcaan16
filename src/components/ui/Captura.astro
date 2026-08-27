@@ -1,0 +1,16 @@
+---
+import { Image } from 'astro:assets';
+import type { Captura as CapturaData } from '../../data/proyectos';
+
+interface Props {
+  captura: CapturaData;
+  eager?: boolean;
+}
+
+const { captura, eager = false } = Astro.props;
+---
+
+<figure class:list={['captura', { 'captura--ancha': captura.ancha }]}>
+  <Image src={captura.src} alt={captura.alt} loading={eager ? 'eager' : 'lazy'} />
+  <figcaption>{captura.caption}</figcaption>
+</figure>
