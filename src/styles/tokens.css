@@ -1,26 +1,45 @@
-/* Sistema de diseño "muelle de descarga" — tokens (Brief §9) */
+/* Sistema de diseño «turno de noche» — oscuro frío de cámara industrial + ámbar de display LED.
+   Evolución aprobada del sistema «muelle de descarga» del brief (Brief §9). */
 :root {
-  /* Paleta */
-  --ink: #0f1a21; /* negro azulado casi puro — textos */
-  --ink-soft: #2a3b46; /* variante suave para párrafos */
-  --muted: #5c6e79; /* gris azulado — etiquetas, pies */
-  --paper: #e9eef0; /* fondo general — blanco frío */
-  --paper-deep: #dde5e8; /* fondo de secciones alternas */
-  --card: #ffffff; /* fondo de tarjetas */
-  --rule: #c6d1d7; /* líneas divisoras */
-  --accent: #14606f; /* teal industrial — eyebrows, chips activos */
-  --accent-deep: #0b424d; /* teal oscuro — enlaces, hover */
-  --alert: #8a5300; /* ámbar — ticket de báscula, cifras de validación */
-  --alert-bg: #fdf5e7; /* fondo ámbar suave */
+  /* Fondos — azul-negro frío */
+  --paper: #0b1215; /* fondo base */
+  --paper-deep: #101a1f; /* secciones alternas */
+  --card: #14222a; /* paneles y tarjetas */
+  --panel: #0d1518; /* bloques de límites */
+  --rule: #24363f; /* bordes y divisores */
 
-  /* Tipografía — IBM Plex */
-  --font-display: 'IBM Plex Sans Condensed', 'Arial Narrow', sans-serif;
+  /* Texto */
+  --ink: #e8eef1; /* titulares */
+  --ink-soft: #b7c5cc; /* cuerpo */
+  --muted: #7d919b; /* etiquetas, pies */
+
+  /* Acentos */
+  --accent: #57c4d4; /* teal frío — detalles */
+  --accent-deep: #86d7e2; /* teal claro — enlaces */
+  --alert: #ffb454; /* ámbar LED — eyebrows, cifras, CTA */
+  --alert-deep: #d98e2b; /* ámbar hundido */
+  --alert-dim: rgba(255, 180, 84, 0.08); /* fondos ámbar tenues */
+  --alert-line: rgba(255, 180, 84, 0.3); /* bordes ámbar */
+
+  /* El ticket de báscula conserva su papel térmico blanco (firma del sitio) */
+  --ticket-paper: #f6f8f9;
+  --ticket-ink: #16242c;
+  --ticket-muted: #5c6e79;
+  --ticket-rule: #cdd8dd;
+  --ticket-alert: #8a5300;
+  --ticket-alert-bg: #fdf5e7;
+
+  /* Tipografía */
+  --font-display: 'Archivo', 'Arial Narrow', sans-serif;
   --font-body: 'IBM Plex Sans', system-ui, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, 'Courier New', monospace;
 
   /* Medidas */
   --container: 1100px;
   --gutter: 1.25rem;
-  --section-y: clamp(3.5rem, 8vw, 5.5rem);
+  --section-y: clamp(4rem, 9vw, 6.5rem);
   --topbar-h: 3.5rem;
+
+  /* Brillo LED */
+  --led-glow: 0 0 14px rgba(255, 180, 84, 0.35);
 }

@@ -39,14 +39,15 @@ const anioActual = new Date().getFullYear();
     font-family: var(--font-mono);
     font-size: clamp(1.05rem, 2.6vw, 1.5rem);
     font-weight: 600;
-    color: var(--alert-bg);
+    color: var(--alert);
+    text-shadow: var(--led-glow);
     text-decoration-thickness: 1px;
     text-underline-offset: 5px;
     overflow-wrap: anywhere;
   }
 
   .email:hover {
-    color: var(--paper);
+    color: #ffc678;
   }
 
   .redes {
@@ -63,9 +64,9 @@ const anioActual = new Date().getFullYear();
     gap: 0.5rem 2rem;
     margin-top: 3.5rem;
     padding-top: 1.2rem;
-    border-top: 1px solid rgba(233, 238, 240, 0.18);
+    border-top: 1px solid var(--rule);
     font-family: var(--font-mono);
     font-size: 0.74rem;
-    color: var(--rule);
+    color: var(--muted);
   }
 </style>
