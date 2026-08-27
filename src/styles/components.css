@@ -1,4 +1,5 @@
-/* Primitivas compartidas — turno de noche: paneles fríos, ámbar LED, cero border-radius */
+/* Primitivas compartidas — papel claro, cero border-radius en lo industrial.
+   Transiciones solo de color/borde/fondo, máximo 0,15 s. Sin transformaciones. */
 
 /* Eyebrow */
 .eyebrow {
@@ -7,7 +8,7 @@
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--alert);
+  color: var(--accent);
 }
 
 /* Botones */
@@ -15,48 +16,76 @@
   display: inline-block;
   font-family: var(--font-mono);
   font-size: 0.82rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
-  padding: 0.75rem 1.4rem;
-  border: 1px solid var(--alert);
+  padding: 0.7rem 1.3rem;
   border-radius: 0;
   transition:
-    background 0.18s ease,
-    color 0.18s ease,
-    border-color 0.18s ease,
-    transform 0.18s ease,
-    box-shadow 0.18s ease;
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
 }
 
-.btn:hover {
-  transform: translateY(-2px);
-}
-
+/* Primario sobre papel — relleno oscuro (v1) */
 .btn--solid {
-  background: var(--alert);
+  background: var(--ink);
+  border: 1px solid var(--ink);
   color: var(--paper);
 }
 
 .btn--solid:hover {
-  background: #ffc678;
-  border-color: #ffc678;
+  background: var(--accent-deep);
+  border-color: var(--accent-deep);
   color: var(--paper);
-  box-shadow: var(--led-glow);
 }
 
-.btn--ghost,
-.btn--light {
-  background: transparent;
-  border-color: var(--rule);
+/* Primario sobre banda oscura — papel sólido, texto oscuro (v2 §4) */
+.btn--paper {
+  background: var(--paper);
+  border: 1px solid var(--paper);
   color: var(--ink);
 }
 
-.btn--ghost:hover,
-.btn--light:hover {
-  border-color: var(--alert);
-  color: var(--alert);
+.btn--paper:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: var(--ink);
+}
+
+/* .section--dark a ganaría por especificidad — el primario papel mantiene texto oscuro */
+.section--dark .btn--paper {
+  color: var(--ink);
+}
+
+.section--dark .btn--paper:hover {
+  color: var(--ink);
+}
+
+/* Ghost sobre papel — borde 2px en acento (v2 §8) */
+.btn--ghost {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--ink);
+}
+
+.btn--ghost:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+/* Ghost sobre banda oscura — borde 2px en acento on-dark (v2 §4) */
+.section--dark .btn--ghost {
+  border-color: var(--accent-on-dark);
+  color: var(--accent-on-dark);
+}
+
+.section--dark .btn--ghost:hover {
+  background: var(--accent-on-dark);
+  border-color: var(--accent-on-dark);
+  color: var(--ink);
 }
 
 /* Chips de tecnología */
@@ -64,29 +93,16 @@
   display: inline-block;
   font-family: var(--font-mono);
   font-size: 0.78rem;
-  padding: 0.3rem 0.65rem;
+  padding: 0.28rem 0.6rem;
   border: 1px solid var(--rule);
   background: var(--card);
   color: var(--ink-soft);
   white-space: nowrap;
-  transition:
-    border-color 0.18s ease,
-    color 0.18s ease;
-}
-
-.chip:hover {
-  border-color: var(--accent);
-  color: var(--ink);
 }
 
 .chip--activo {
-  border-color: var(--alert-line);
-  color: var(--alert);
-}
-
-.chip--activo:hover {
-  border-color: var(--alert);
-  color: var(--alert);
+  border-color: var(--accent);
+  color: var(--accent-deep);
 }
 
 .chip-row {
@@ -105,35 +121,33 @@
   line-height: 1.7;
   background: var(--card);
   border: 1px solid var(--rule);
-  border-left: 3px solid var(--accent);
   padding: 1.1rem 1.3rem;
   overflow-x: auto;
   color: var(--ink-soft);
 }
 
-/* Franja de métricas — dígitos de display LED */
+/* Franja de métricas */
 .metricas {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem 2.4rem;
+  gap: 1.5rem 2.2rem;
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
 .metrica {
-  border-left: 2px solid var(--alert);
-  padding-left: 0.85rem;
+  border-left: 2px solid var(--accent);
+  padding-left: 0.8rem;
 }
 
 .metrica__valor {
   display: block;
   font-family: var(--font-mono);
   font-weight: 600;
-  font-size: 1.7rem;
-  color: var(--alert);
+  font-size: 1.45rem;
+  color: var(--ink);
   line-height: 1.2;
-  text-shadow: var(--led-glow);
 }
 
 .metrica__label {
@@ -143,7 +157,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-top: 0.25rem;
+  margin-top: 0.2rem;
 }
 
 /* Capturas */
@@ -154,26 +168,21 @@
 .captura img {
   width: 100%;
   border: 1px solid var(--rule);
-  background: #ffffff;
-  transition: border-color 0.18s ease;
-}
-
-.captura:hover img {
-  border-color: var(--accent);
+  background: var(--card);
 }
 
 .captura figcaption {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--muted);
-  margin-top: 0.55rem;
+  margin-top: 0.5rem;
   line-height: 1.5;
 }
 
 .capturas-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.6rem;
+  gap: 1.5rem;
   align-items: start;
 }
 
@@ -187,12 +196,12 @@
   }
 }
 
-/* Callout de validación (ámbar) */
+/* Callout de validación (ámbar sobre papel) */
 .callout {
-  background: var(--alert-dim);
-  border: 1px solid var(--alert-line);
+  background: var(--alert-bg);
+  border: 1px solid rgba(138, 83, 0, 0.28);
   border-left: 3px solid var(--alert);
-  padding: 1.15rem 1.35rem;
+  padding: 1.1rem 1.3rem;
 }
 
 .callout__titulo {
@@ -202,12 +211,11 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--alert);
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.5rem;
 }
 
 .callout p {
   font-size: 0.95rem;
-  color: var(--ink-soft);
 }
 
 .callout .cifra {
@@ -216,14 +224,12 @@
   color: var(--alert);
 }
 
-/* Bloque de límites — panel señalizado en ámbar */
+/* Bloque oscuro de límites — segunda banda oscura del sitio (v2 §2) */
 .limites {
-  background: var(--panel);
-  border: 1px solid var(--rule);
-  border-left: 3px solid var(--alert);
-  color: var(--ink-soft);
+  background: var(--ink);
+  color: var(--paper-deep);
   padding: 1.8rem 2rem;
-  margin-top: 2.6rem;
+  margin-top: 2.5rem;
 }
 
 .limites__eyebrow {
@@ -232,15 +238,15 @@
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--alert);
-  margin-bottom: 0.95rem;
+  color: var(--alert-on-dark);
+  margin-bottom: 0.9rem;
 }
 
 .limites ul {
   list-style: none;
   padding: 0;
   display: grid;
-  gap: 0.5rem;
+  gap: 0.45rem;
 }
 
 .limites li {
@@ -254,29 +260,27 @@
   position: absolute;
   left: 0;
   font-family: var(--font-mono);
-  color: var(--muted);
+  color: var(--rule);
 }
 
 .limites__nota {
   margin-top: 1rem;
   font-size: 0.85rem;
-  color: var(--muted);
+  color: var(--rule);
 }
 
-/* Tarjetas */
+/* Tarjetas — sombra sutil sobre papel (v2 §8) */
 .card {
   background: var(--card);
   border: 1px solid var(--rule);
-  padding: 1.5rem 1.6rem;
+  padding: 1.4rem 1.5rem;
   border-radius: 0;
-  transition:
-    border-color 0.18s ease,
-    transform 0.18s ease;
+  box-shadow: var(--card-shadow);
+  transition: border-color 0.15s ease;
 }
 
 .card:hover {
-  border-color: var(--alert-line);
-  transform: translateY(-3px);
+  border-color: var(--accent);
 }
 
 .card--sm-radius {
@@ -291,13 +295,12 @@
   font-size: 0.83rem;
   background: var(--card);
   border: 1px solid var(--rule);
-  color: var(--ink-soft);
 }
 
 .tabla-datos th,
 .tabla-datos td {
   text-align: left;
-  padding: 0.65rem 0.95rem;
+  padding: 0.6rem 0.9rem;
   border-bottom: 1px solid var(--rule);
   white-space: nowrap;
 }
@@ -308,7 +311,7 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
-  background: var(--panel);
+  background: var(--paper);
 }
 
 .tabla-datos tbody tr:last-child td {
@@ -324,7 +327,7 @@
   list-style: none;
   padding: 0;
   display: grid;
-  gap: 0.5rem;
+  gap: 0.45rem;
 }
 
 .lista-guion li {
@@ -337,5 +340,5 @@
   position: absolute;
   left: 0;
   font-family: var(--font-mono);
-  color: var(--alert);
+  color: var(--accent);
 }

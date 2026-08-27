@@ -1,15 +1,17 @@
-/* Ticket de báscula — elemento firma. Papel térmico blanco brillando sobre el turno de noche. */
+/* Ticket de báscula — elemento firma del hero, posado sobre la banda oscura (v2 §5).
+   Único elemento del sitio con animación de entrada. */
 .ticket {
   width: min(340px, 100%);
-  background: var(--ticket-paper);
-  border-top: 3px solid var(--ticket-ink);
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-top: 3px solid var(--ink);
   font-family: var(--font-mono);
-  color: var(--ticket-ink);
+  color: var(--ink);
   padding: 1.1rem 1.2rem 1.3rem;
   box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.06),
-    0 18px 50px rgba(0, 0, 0, 0.55),
-    0 0 60px rgba(255, 180, 84, 0.07);
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 12px 28px -8px rgba(0, 0, 0, 0.45),
+    0 32px 64px -24px rgba(0, 0, 0, 0.55);
 }
 
 .ticket__header {
@@ -21,14 +23,14 @@
   letter-spacing: 0.04em;
   white-space: nowrap;
   padding-bottom: 0.6rem;
-  border-bottom: 1px dashed var(--ticket-rule);
+  border-bottom: 1px dashed var(--rule);
 }
 
 .ticket__rows {
   list-style: none;
   margin: 0;
   padding: 0.6rem 0;
-  border-bottom: 1px dashed var(--ticket-rule);
+  border-bottom: 1px dashed var(--rule);
 }
 
 .ticket__rows li {
@@ -40,20 +42,21 @@
 }
 
 .ticket__rows .etiqueta {
-  color: var(--ticket-muted);
+  color: var(--muted);
 }
 
 .ticket__rows .valor {
   font-weight: 600;
 }
 
+/* La fila de alerta: único elemento ámbar de todo el hero (v2 §4) */
 .ticket__alerta {
   margin-top: 0.7rem;
   font-size: 0.76rem;
   font-weight: 600;
   line-height: 1.5;
-  color: var(--ticket-alert);
-  background: var(--ticket-alert-bg);
+  color: var(--alert);
+  background: var(--alert-bg);
   border: 1px solid rgba(138, 83, 0, 0.28);
   padding: 0.55rem 0.7rem;
 }
@@ -61,7 +64,7 @@
 .ticket__pie {
   margin-top: 0.8rem;
   font-size: 0.68rem;
-  color: var(--ticket-muted);
+  color: var(--muted);
   letter-spacing: 0.04em;
 }
 
