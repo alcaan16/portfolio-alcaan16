@@ -15,6 +15,15 @@ const anioActual = new Date().getFullYear();
       <a class="btn btn--ghost" href="https://github.com/alcaan16">GitHub · alcaan16</a>
       <a class="btn btn--ghost" href="https://www.linkedin.com/in/alcaan-dev">LinkedIn · alcaan-dev</a>
     </div>
+    <p class="cv">
+      <a href="/CV_Angel_Alferez_SAP_ABAP_Developer.pdf" target="_blank" rel="noopener">
+        Descargar CV (ES)
+      </a>
+      <span class="cv__sep" aria-hidden="true">·</span>
+      <a href="/CV_Angel_Alferez_SAP_ABAP_Developer_EN.pdf" target="_blank" rel="noopener">
+        Download CV (EN)
+      </a>
+    </p>
     <footer class="pie">
       <span>© {anioActual} Ángel Alférez Castro · alcaan16.es</span>
       <span>HTML estático generado con Astro — sin JavaScript de framework en runtime.</span>
@@ -54,6 +63,21 @@ const anioActual = new Date().getFullYear();
     flex-wrap: wrap;
     gap: 0.8rem;
     margin-top: 1.8rem;
+  }
+
+  /* Enlaces de texto, no botones — no compiten con el email ni con las redes */
+  .cv {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin-top: 1.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+  }
+
+  .cv__sep {
+    color: var(--muted);
   }
 
   .pie {
