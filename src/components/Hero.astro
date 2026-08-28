@@ -50,6 +50,11 @@ import BasculaTicket from './BasculaTicket.astro';
 </section>
 
 <style>
+  /* Menos aire arriba: la topbar ya separa del borde. El inferior mantiene el ritmo de sección. */
+  #hero {
+    padding-top: clamp(1.5rem, 4vw, 3rem);
+  }
+
   /* Líneas de encuadre — v2 §6: solo en el hero, fuera en móvil */
   .hero__marco {
     border-left: 1px solid rgba(95, 176, 192, 0.22);
