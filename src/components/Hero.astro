@@ -23,6 +23,14 @@ import BasculaTicket from './BasculaTicket.astro';
           <div class="hero__ctas">
             <a class="btn btn--paper" href="#p1">Ver proyectos</a>
             <a class="btn btn--ghost" href="#contacto">Contacto</a>
+            <a
+              class="hero__cv"
+              href="/CV_Angel_Alferez_SAP_ABAP_Developer.pdf"
+              target="_blank"
+              rel="noopener"
+            >
+              Descargar CV <span aria-hidden="true">↓</span>
+            </a>
           </div>
           <ul class="hero__meta">
             <li>3× SAP Certified 2026</li>
@@ -81,8 +89,24 @@ import BasculaTicket from './BasculaTicket.astro';
   .hero__ctas {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.8rem;
+    align-items: center;
+    gap: 0.8rem 1.4rem;
     margin-top: 1.8rem;
+  }
+
+  /* Tercer nivel de jerarquía: enlace de texto, sin relleno ni borde */
+  .hero__cv {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-on-dark);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  .hero__cv:hover {
+    color: var(--paper);
   }
 
   .hero__meta {

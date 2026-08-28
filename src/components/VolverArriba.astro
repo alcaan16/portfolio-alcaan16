@@ -1,0 +1,65 @@
+---
+// Botón flotante de vuelta al inicio. Aparece solo una vez pasado el hero.
+// Mejora progresiva: sin JS nunca se muestra, y la página sigue siendo navegable.
+---
+
+<a class="volver-arriba" href="#top" aria-label="Volver arriba" hidden>
+  <span aria-hidden="true">↑</span>
+</a>
+
+<script>
+  const boton = document.querySelector<HTMLAnchorElement>('.volver-arriba');
+  const hero = document.getElementById('hero');
+
+  if (boton && hero && 'IntersectionObserver' in window) {
+    boton.hidden = false;
+    const observer = new IntersectionObserver(
+      ([entrada]) => {
+        boton.classList.toggle('is-visible', !entrada.isIntersecting);
+      },
+      { threshold: 0 }
+    );
+    observer.observe(hero);
+  }
+</script>
+
+<style>
+  .volver-arriba {
+    position: fixed;
+    right: clamp(1rem, 3vw, 2rem);
+    bottom: clamp(1rem, 3vw, 2rem);
+    z-index: 60;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    background: var(--ink);
+    border: 1px solid var(--ink);
+    border-radius: 0;
+    color: var(--paper);
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    line-height: 1;
+    text-decoration: none;
+    /* Oculto hasta pasar el hero; sin transform para no introducir movimiento */
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.15s ease,
+      visibility 0.15s ease,
+      background 0.15s ease,
+      border-color 0.15s ease;
+  }
+
+  .volver-arriba.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .volver-arriba:hover {
+    background: var(--accent-deep);
+    border-color: var(--accent-deep);
+    color: var(--paper);
+  }
+</style>
