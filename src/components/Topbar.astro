@@ -1,10 +1,17 @@
 ---
-const enlaces = [
+interface Enlace {
+  href: string;
+  texto: string;
+  externo?: boolean;
+}
+
+const enlaces: Enlace[] = [
   { href: '#p1', texto: 'Proyectos' },
   { href: '#stack', texto: 'Stack' },
   { href: '#trayectoria', texto: 'Trayectoria' },
   { href: '#otros-proyectos', texto: 'Otros' },
   { href: '#contacto', texto: 'Contacto' },
+  { href: '/CV_Angel_Alferez_SAP_ABAP_Developer.pdf', texto: 'CV', externo: true },
 ];
 ---
 
@@ -19,7 +26,17 @@ const enlaces = [
       <span></span><span></span><span></span>
     </label>
     <nav class="topbar__nav" aria-label="Secciones">
-      {enlaces.map((enlace) => <a href={enlace.href}>{enlace.texto}</a>)}
+      {
+        enlaces.map((enlace) =>
+          enlace.externo ? (
+            <a href={enlace.href} target="_blank" rel="noopener">
+              {enlace.texto}
+            </a>
+          ) : (
+            <a href={enlace.href}>{enlace.texto}</a>
+          )
+        )
+      }
     </nav>
   </div>
 </header>

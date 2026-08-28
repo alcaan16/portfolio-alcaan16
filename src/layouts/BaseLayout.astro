@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import VolverArriba from '../components/VolverArriba.astro';
 
 interface Props {
   title: string;
@@ -67,8 +68,9 @@ const jsonLd = {
     />
     <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
-  <body>
+  <body id="top">
     <a class="skip-link" href="#main">Saltar al contenido</a>
     <slot />
+    <VolverArriba />
   </body>
 </html>
