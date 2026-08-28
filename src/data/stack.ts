@@ -32,7 +32,6 @@ export const stackNoSap = [
   'SQLite',
   'Docker',
   'Git',
-  'ngrok',
 ];
 
 export const stackNota =
