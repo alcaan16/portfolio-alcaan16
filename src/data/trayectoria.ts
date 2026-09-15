@@ -38,7 +38,7 @@ export const hitos: Hito[] = [
     titulo: 'Formación SAP y certificaciones',
     subtitulo: 'Experis Academy · 270 horas',
     parrafos: [
-      'IFCT0097 (ABAP Cloud, 205 h) + IFCT0244 (SAP BTP, 65 h). Tres certificaciones SAP Certified Associate obtenidas entre julio y agosto de 2026, las tres en formato System-Based Assessment.',
+      'IFCT0097 (ABAP Cloud, 205 h) + IFCT0244 (SAP BTP, 65 h). Cuatro certificaciones SAP Certified Associate obtenidas entre julio y septiembre de 2026 — las tres primeras en formato System-Based Assessment, la de Fiori mediante una simulación de rol con IA.',
     ],
   },
   {
