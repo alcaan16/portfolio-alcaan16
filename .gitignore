@@ -17,3 +17,9 @@ pnpm-debug.log*
 
 # macOS / editor
 .DS_Store
+
+# documentos internos de trabajo (no publicar)
+Brief_*.md
+
+# configuración local de Claude Code
+.claude/
