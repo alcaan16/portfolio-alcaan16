@@ -38,7 +38,7 @@ h4 {
   text-wrap: balance;
 }
 
-/* Titular del hero — v2: peso, tamaño y tracking; caja baja */
+/* Titular del hero - v2: peso, tamaño y tracking; caja baja */
 h1 {
   font-weight: 700;
   font-size: clamp(2.4rem, 5.2vw, 3.6rem);
