@@ -17,7 +17,7 @@
   background: var(--paper-deep);
 }
 
-/* Banda oscura - v2: solo el hero (y los bloques de límites como componente) */
+/* Banda oscura: solo el hero (y los bloques de límites como componente) */
 .section--dark {
   background: var(--ink);
   color: #b6c6ce;

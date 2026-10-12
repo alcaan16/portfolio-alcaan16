@@ -93,7 +93,7 @@ export const p1 = {
     },
     {
       src: p1AccionOff,
-      alt: 'Botón "Registrar entrada" deshabilitado por desviación pendiente',
+      alt: 'Botón «Registrar entrada» deshabilitado por desviación pendiente',
       caption: '05 · Acción deshabilitada: desviación pendiente de resolver',
       ancha: true,
     },
@@ -104,7 +104,7 @@ export const p1 = {
     },
     {
       src: p1AccionOn,
-      alt: 'Botón "Registrar entrada" habilitado tras resolver la desviación',
+      alt: 'Botón «Registrar entrada» habilitado tras resolver la desviación',
       caption: '07 · Acción habilitada tras resolver la desviación',
       ancha: true,
     },

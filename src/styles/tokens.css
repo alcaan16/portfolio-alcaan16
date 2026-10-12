@@ -1,7 +1,7 @@
-/* Sistema de diseño «muelle de descarga» v2 - papel claro + hero en banda oscura.
+/* Sistema de diseño «muelle de descarga»: papel claro + hero en banda oscura.
    Tokens base + variantes on-dark. */
 :root {
-  /* Paleta v1 - superficies claras */
+  /* Paleta: superficies claras */
   --ink: #0f1a21; /* negro azulado casi puro - textos y bandas oscuras */
   --ink-soft: #2a3b46; /* variante suave para párrafos */
   --muted: #5c6e79; /* gris azulado - etiquetas, pies */

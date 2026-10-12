@@ -28,7 +28,7 @@
     border-color 0.15s ease;
 }
 
-/* Primario sobre papel - relleno oscuro (v1) */
+/* Primario sobre papel - relleno oscuro */
 .btn--solid {
   background: var(--ink);
   border: 1px solid var(--ink);

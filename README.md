@@ -47,6 +47,19 @@ pnpm check     # comprobación de tipos de Astro
 ```
  
 Requiere Node ≥ 18.
+
+## Imagen social
+
+`public/og.png` es una captura del hero a 1200×630. Hay que regenerarla cuando cambie el hero:
+
+```bash
+pnpm build              # build con el hero nuevo
+node scripts/og.mjs     # captura con Edge o Chrome sin interfaz y escribe public/og.png
+pnpm build              # segundo build, para que dist/ incluya la imagen nueva
+```
+
+El script espera a que acabe la animación del ticket. Si el navegador no está en una ruta
+habitual, indícalo con la variable `BROWSER` (ruta completa al ejecutable de Edge o Chrome).
  
 ---
  
