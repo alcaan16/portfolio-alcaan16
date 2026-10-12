@@ -188,7 +188,7 @@ export const p3 = {
   queResuelve:
     'Conecta la recepción de mercancía con lote de zgr-goods-receipt con una aplicación externa de alertas de vida útil: toma el dato de lote y caducidad que la recepción ya produce y lo entrega a un sistema que clasifica cada lote como caducado, próximo a caducar u ok.',
   porQueEsteCaso:
-    'El caso previsto era "sincronización de maestro de materiales", el ejercicio estándar de cualquier curso de Integration Suite. Se descartó porque P1 no gestiona maestros de material: gestiona entradas de mercancía con lote y caducidad. Este caso mantiene el mismo hilo funcional corriendo por los tres proyectos.',
+    'El caso previsto era «sincronización de maestro de materiales», el ejercicio estándar de cualquier curso de Integration Suite. Se descartó porque P1 no gestiona maestros de material: gestiona entradas de mercancía con lote y caducidad. Este caso mantiene el mismo hilo funcional corriendo por los tres proyectos.',
   arquitectura: `Start Timer → Content Modifier (payload de muestra) → Groovy: filtrar borradores
 → Groovy: mapear formato receptor → Request Reply (HTTPS) → receptor Node/Express
 [Exception Subprocess con Groovy: capturar fallo]`,
@@ -197,11 +197,11 @@ export const p3 = {
   scripts: [
     '01-filtrar-borradores.groovy: descarta entidades en estado borrador (IsActiveEntity: false).',
     '02-mapea-formato-receptor.groovy: recorre Receipt → Item → Batch y produce un registro plano por lote.',
-    '03-capturar-fallo.groovy: Exception Subprocess: captura cualquier fallo no controlado del flujo principal.',
+    '03-capturar-fallo.groovy: dentro del Exception Subprocess, captura cualquier fallo no controlado del flujo principal.',
   ],
   demuestra: [
     'Exception Subprocess verificado con un fallo real: deteniendo el receptor a propósito, la llamada HTTP falló y la ejecución saltó a la rama de captura. El mensaje terminó como Completed, no como Failed. Es la diferencia entre un flujo que funciona en el camino feliz y uno que se sostiene cuando algo falla.',
-    'Criterio de ingeniería documentado: las limitaciones (origen de datos, permisos) están explicadas con precisión: cuál es el bloqueo real y cómo se resolvió sin fingir.',
+    'Criterio de ingeniería documentado: cada limitación (origen de datos, permisos) explica cuál es el bloqueo real y cómo se resolvió sin fingir.',
     'Código real en el repositorio: receiver/ en Node/Express y 3 scripts Groovy, no solo capturas de pantalla.',
   ],
   capturasDestacadas: [

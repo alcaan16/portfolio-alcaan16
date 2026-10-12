@@ -41,7 +41,7 @@
   color: var(--paper);
 }
 
-/* Primario sobre banda oscura - papel sólido y opaco, texto oscuro (v2 §4) */
+/* Primario sobre banda oscura - papel sólido y opaco, texto oscuro */
 .btn--paper {
   background: var(--paper);
   border: 1px solid var(--paper);
@@ -65,7 +65,7 @@
   color: var(--ink);
 }
 
-/* Ghost sobre papel - borde 2px en acento (v2 §8) */
+/* Ghost sobre papel - borde 2px en acento */
 .btn--ghost {
   background: transparent;
   border: 2px solid var(--accent);
@@ -78,7 +78,7 @@
   color: #ffffff;
 }
 
-/* Ghost sobre banda oscura - borde 2px en acento on-dark (v2 §4) */
+/* Ghost sobre banda oscura - borde 2px en acento on-dark */
 .section--dark .btn--ghost {
   border-color: var(--accent-on-dark);
   color: var(--accent-on-dark);
@@ -226,7 +226,7 @@
   color: var(--alert);
 }
 
-/* Bloque oscuro de límites - segunda banda oscura del sitio (v2 §2) */
+/* Bloque oscuro de límites - segunda banda oscura del sitio */
 .limites {
   background: var(--ink);
   color: var(--paper-deep);
@@ -271,7 +271,7 @@
   color: var(--rule);
 }
 
-/* Tarjetas - sombra sutil sobre papel (v2 §8) */
+/* Tarjetas - sombra sutil sobre papel */
 .card {
   background: var(--card);
   border: 1px solid var(--rule);
