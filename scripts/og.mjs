@@ -17,6 +17,13 @@ const dist = join(raiz, 'dist');
 const salida = join(raiz, 'public', 'og.png');
 const ANCHO = 1200;
 const ALTO = 630;
+// La captura se hace con una ventana más grande, en la misma proporción 1200:630, y se
+// reduce con la escala del dispositivo. Así el borde inferior cae en el hueco entre los
+// botones y la lista de datos del hero, y no a media cita. El navegador rasteriza el texto
+// ya a la escala final, sin remuestrear después, por lo que sigue nítido.
+const VENTANA_ANCHO = 1400;
+const VENTANA_ALTO = Math.round((VENTANA_ANCHO * ALTO) / ANCHO);
+const ESCALA = ANCHO / VENTANA_ANCHO;
 
 if (!existsSync(join(dist, 'index.html'))) {
   console.error('No hay dist/index.html. Ejecuta antes: CI=true pnpm run build');
@@ -78,8 +85,8 @@ const codigo = await new Promise((ok) => {
       '--headless',
       '--disable-gpu',
       '--hide-scrollbars',
-      '--force-device-scale-factor=1',
-      `--window-size=${ANCHO},${ALTO}`,
+      `--force-device-scale-factor=${ESCALA}`,
+      `--window-size=${VENTANA_ANCHO},${VENTANA_ALTO}`,
       '--virtual-time-budget=6000',
       `--screenshot=${salida}`,
       `http://127.0.0.1:${port}/`,
