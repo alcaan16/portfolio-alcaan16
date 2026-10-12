@@ -1,4 +1,4 @@
-/* Ticket de báscula — elemento firma del hero, posado sobre la banda oscura (v2 §5).
+/* Ticket de báscula - elemento firma del hero, posado sobre la banda oscura.
    Único elemento del sitio con animación de entrada. */
 .ticket {
   width: min(340px, 100%);
@@ -49,7 +49,7 @@
   font-weight: 600;
 }
 
-/* La fila de alerta: único elemento ámbar de todo el hero (v2 §4) */
+/* La fila de alerta: único elemento ámbar de todo el hero */
 .ticket__alerta {
   margin-top: 0.7rem;
   font-size: 0.76rem;

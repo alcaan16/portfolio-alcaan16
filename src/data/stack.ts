@@ -1,4 +1,4 @@
-// Stack técnico — fuente: Brief §5. No añadir tecnología no listada.
+// Stack técnico. No añadir tecnología no listada.
 export const stackSap = [
   'ABAP Cloud',
   'RAP',
@@ -35,4 +35,4 @@ export const stackNoSap = [
 ];
 
 export const stackNota =
-  'Lo que no está en la lista, no se afirma: sin apps Fiori/UI5 propias, sin iDoc ni RFC, sin ABAP clásico. Cada tecnología SAP de arriba tiene un proyecto publicado detrás.';
+  'Lo que no está en la lista, no lo afirmo: todavía no tengo app Fiori/UI5 propia ni he trabajado con iDoc, RFC o ABAP clásico en proyecto. Cada tecnología SAP de arriba tiene un proyecto publicado detrás.';

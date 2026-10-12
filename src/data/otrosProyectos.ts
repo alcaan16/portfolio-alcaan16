@@ -1,4 +1,4 @@
-// Otros repositorios — base técnica previa a SAP. Fuente: Brief §7.
+// Otros repositorios: base técnica previa a SAP.
 export interface OtroProyecto {
   nombre: string;
   repoUrl: string;
@@ -13,7 +13,7 @@ export const otrosProyectos: OtroProyecto[] = [
     repoUrl: 'https://github.com/alcaan16/canister-api',
     stack: ['Node.js', 'Express 5'],
     descripcion:
-      'API REST con separación por capas —rutas, controladores, servicios— y CORS. La misma idea de modelo + servicio que después aparece en CAP.',
+      'API REST con separación por capas (rutas, controladores, servicios) y CORS. La misma idea de modelo + servicio que después aparece en CAP.',
   },
   {
     nombre: 'mundoacuatico',

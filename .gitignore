@@ -20,6 +20,8 @@ pnpm-debug.log*
 
 # documentos internos de trabajo (no publicar)
 Brief_*.md
+Diario_*.md
+Perfil_*.md
 
 # configuración local de Claude Code
 .claude/
