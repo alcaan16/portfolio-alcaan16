@@ -11,6 +11,8 @@ export default defineConfig({
   // Permite exponer el dev server por túnel (ngrok / cloudflared) para revisar desde el móvil
   server: { host: true },
   vite: {
+    // Mantiene el CSS compatible con navegadores anteriores a 2023 (media queries con max-width)
+    build: { cssTarget: ['chrome87', 'edge88', 'firefox78', 'safari14'] },
     server: {
       allowedHosts: ['.ngrok-free.app', '.trycloudflare.com'],
     },
