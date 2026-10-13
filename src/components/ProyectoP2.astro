@@ -96,6 +96,13 @@ import TablaFefo from './ui/TablaFefo.astro';
     padding: 1.2rem;
   }
 
+  /* Sin esto, un <pre> ancho ensancha su columna y desborda la página en móvil y tablet */
+  @media (max-width: 920px) {
+    .bloques-2col > * {
+      min-width: 0;
+    }
+  }
+
   @media (max-width: 820px) {
     .bloques-2col {
       grid-template-columns: 1fr;

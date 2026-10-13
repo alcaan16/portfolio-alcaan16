@@ -63,7 +63,8 @@ import { otrosProyectos } from '../data/otrosProyectos';
     flex-grow: 1;
   }
 
-  @media (max-width: 820px) {
+  /* 920 y no 820: con tres columnas, un chip largo desborda la página en tablet */
+  @media (max-width: 920px) {
     .otros-grid {
       grid-template-columns: 1fr;
     }
