@@ -9,11 +9,10 @@ export interface Hito {
 
 export const hitos: Hito[] = [
   {
-    periodo: '2007-2010',
-    titulo: 'Experiencia IT inicial',
-    subtitulo: 'Dynos · Intarnet',
+    periodo: '2007 - 2010',
+    titulo: 'Sistemas y formación técnica',
     parrafos: [
-      'Trabajo en empresas del sector tecnológico. Titulación oficial: ASI (Administración de Sistemas Informáticos), I.E.S. Gran Capitán, Córdoba.',
+      'Técnico de sistemas en CIAC (octubre 2007 - febrero 2008). Técnico Superior en Administración de Sistemas Informáticos (ASI), I.E.S. Gran Capitán, Córdoba (2008-2010).',
     ],
   },
   {
