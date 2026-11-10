@@ -3,7 +3,7 @@ export interface Certificacion {
   codigo: string;
   nombre: string;
   anio: string;
-  // Opcional: la cuarta (Fiori) todavía no tiene proyecto propio publicado.
+  // Opcional: Fiori y Joule Studio todavía no tienen proyecto propio publicado.
   proyecto?: { etiqueta: string; ancla: string };
 }
 
@@ -31,10 +31,15 @@ export const certificaciones: Certificacion[] = [
     nombre: 'SAP Certified Associate · Fiori Application Developer',
     anio: '2026',
   },
+  {
+    codigo: 'C_JSD',
+    nombre: 'SAP Certified · Joule Studio Developer',
+    anio: '2026',
+  },
 ];
 
 export const certificacionesFormato =
-  'Las tres primeras en formato System-Based Assessment: no son tipo test, se resuelven ejecutando tareas en un sistema SAP en vivo. SAP retiró la opción múltiple del C_ABAPD en la versión 2601 (2026). La de Fiori usa un formato distinto: una entrevista con una IA, de pregunta y respuesta.';
+  'Las tres primeras en formato System-Based Assessment: no son tipo test, se resuelven ejecutando tareas en un sistema SAP en vivo. SAP retiró la opción múltiple del C_ABAPD en la versión 2601 (2026). La de Fiori usa un formato distinto: una entrevista con una IA, de pregunta y respuesta. La de Joule Studio es un examen práctico: crear agentes de IA y skills con Joule Studio sobre SAP BTP y defenderlos en un roleplay con un avatar de IA.';
 
 export const certificacionesNota =
-  'Las tres primeras, cada una con un proyecto publicado detrás. La cuarta, Fiori, todavía no tiene proyecto propio: el siguiente paso es una interfaz Fiori Elements sobre P1.';
+  'Las tres primeras, cada una con un proyecto publicado detrás. Fiori y Joule Studio todavía no tienen proyecto propio: el siguiente paso es una interfaz Fiori Elements sobre P1.';
