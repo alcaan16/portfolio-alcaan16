@@ -42,7 +42,7 @@ export const p1 = {
   metricas: [
     { valor: '32', label: 'tests ABAP Unit' },
     { valor: '0 / 0', label: 'errores / avisos ATC' },
-    { valor: '6 + 7 + 4', label: 'determinations + validations + acciones' },
+    { valor: '7 + 7 + 4', label: 'determinations + validations + acciones' },
     { valor: '10', label: 'vistas CDS' },
     { valor: '~1.200', label: 'líneas de clase de comportamiento' },
   ],
